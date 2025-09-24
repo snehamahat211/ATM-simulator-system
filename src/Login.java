@@ -15,9 +15,19 @@ public class Login extends JFrame {
         add(label);
 
         JLabel text=new JLabel("Welcome to ATM");
-        text.setFont(new Font("Times New Roman",Font.BOLD,38));
-        text.setBounds(200,40,100,40);
+        text.setFont(new Font("Arial",Font.BOLD,38));
+        text.setBounds(200,40,400,40);
         add(text);
+
+        JLabel cardno=new JLabel("Card no:");
+        cardno.setFont(new Font("Arial",Font.BOLD,38));
+        cardno.setBounds(120,150,400,40);
+        add(cardno);
+
+        JLabel pin =new JLabel("PIN:");
+        pin.setFont(new Font("Arial",Font.BOLD,38));
+        pin.setBounds(120,220,400,40);
+        add(pin);
 
 
         getContentPane().setBackground(Color.white);
