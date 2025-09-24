@@ -11,7 +11,7 @@ public class Login extends JFrame {
         Image i2=i1.getImage().getScaledInstance(60,60,Image.SCALE_DEFAULT);
         ImageIcon i3=new ImageIcon(i2);
         JLabel label=new JLabel(i3);
-        label.setBounds(70,10,100,100);
+        label.setBounds(100,10,100,100);
         add(label);
 
         JLabel text=new JLabel("Welcome to ATM");
@@ -20,27 +20,44 @@ public class Login extends JFrame {
         add(text);
 
         JLabel cardno=new JLabel("Card no:");
-        cardno.setFont(new Font("Arial",Font.BOLD,38));
-        cardno.setBounds(120,150,400,40);
+        cardno.setFont(new Font("Arial",Font.BOLD,28));
+        cardno.setBounds(120,150,150,30);
         add(cardno);
 
         JTextField cardTextField=new JTextField();
-        cardTextField.setBounds(300,150,250,30);
+        cardTextField.setBounds(260,150,230,30);
         add (cardTextField);
 
         JLabel pin =new JLabel("PIN:");
-        pin.setFont(new Font("Arial",Font.BOLD,38));
-        pin.setBounds(120,220,400,40);
+        pin.setFont(new Font("Arial",Font.BOLD,28));
+        pin.setBounds(120,220,150,30);
         add(pin);
 
         JTextField pinTextField=new JTextField();
-        pinTextField.setBounds(300,220,250,30);
+        pinTextField.setBounds(260,220,230,30);
         add (pinTextField);
 
+        JButton login=new JButton("SIGN IN");
+        login.setBounds(260,300,100,30);
+        login.setBackground(Color.BLACK);
+        login.setForeground(Color.WHITE);
+        add(login);
+
+        JButton clear=new JButton("CLEAR");
+        clear.setBounds(390,300,100,30);
+        clear.setBackground(Color.BLACK);
+        clear.setForeground(Color.WHITE);
+        add(clear);
+
+        JButton signup=new JButton("SIGNUP");
+        signup.setBounds(260,350,230,30);
+        signup.setBackground(Color.BLACK);
+        signup.setForeground(Color.WHITE);
+        add(signup);
 
         getContentPane().setBackground(Color.white);
 
-        setSize(800,400);
+        setSize(680,500);
         setVisible(true);
         setLocation(350,200);
     }
