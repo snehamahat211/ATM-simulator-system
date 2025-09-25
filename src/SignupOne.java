@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+import com.toedter.calendar.JDateChooser;
 
 public class SignupOne extends JFrame {
     SignupOne() {
@@ -45,6 +46,12 @@ public class SignupOne extends JFrame {
         dob.setFont(new Font("Arial",Font.BOLD,20));
         dob.setBounds(100,240,230,30);
         add(dob);
+
+        JDateChooser datechooser= new JDateChooser();
+        datechooser.setBounds(300,240,230,30);
+        add(datechooser);
+
+
 
         JLabel gender =new JLabel("Gender:");
         gender.setFont(new Font("Arial",Font.BOLD,20));
