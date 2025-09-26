@@ -64,7 +64,7 @@ public class SignupOne extends JFrame {
         add(male);
 
         JRadioButton female = new JRadioButton("Female");
-        female.setBounds(420,290,80,30);
+        female.setBounds(460,290,80,30);
         female.setBackground(Color.WHITE);
         add(female);
 
@@ -93,12 +93,12 @@ public class SignupOne extends JFrame {
         add(married);
 
         JRadioButton unmarried = new JRadioButton("Unmarried");
-        unmarried.setBounds(420,390,90,30);
+        unmarried.setBounds(460,390,90,30);
         unmarried.setBackground(Color.WHITE);
         add(unmarried);
 
         JRadioButton other = new JRadioButton("Other");
-        other.setBounds(540,390,90,30);
+        other.setBounds(640,390,90,30);
         other.setBackground(Color.WHITE);
         add(other);
 
@@ -146,6 +146,15 @@ public class SignupOne extends JFrame {
         pinTextField.setFont(new Font("Arial",Font.BOLD,20));
         pinTextField.setBounds(300,590,400,30);
         add(pinTextField);
+
+
+        JButton next=new JButton("Next");
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.WHITE);
+        next.setFont(new Font("Arial",Font.BOLD,20));
+        next.setBounds(620,660,80,20);
+        add(next);
+
 
 
 
