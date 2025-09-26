@@ -48,7 +48,7 @@ public class SignupOne extends JFrame {
         add(dob);
 
         JDateChooser datechooser= new JDateChooser();
-        datechooser.setBounds(300,240,230,30);
+        datechooser.setBounds(300,240,400,30);
         add(datechooser);
 
 
@@ -57,6 +57,20 @@ public class SignupOne extends JFrame {
         gender.setFont(new Font("Arial",Font.BOLD,20));
         gender.setBounds(100,290,200,30);
         add(gender);
+
+        JRadioButton male = new JRadioButton("Male");
+        male.setBounds(300,290,60,30);
+        male.setBackground(Color.WHITE);
+        add(male);
+
+        JRadioButton female = new JRadioButton("Female");
+        female.setBounds(420,290,80,30);
+        female.setBackground(Color.WHITE);
+        add(female);
+
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(male);
+        buttonGroup.add(female);
 
         JLabel email =new JLabel("Email:");
         email.setFont(new Font("Arial",Font.BOLD,20));
@@ -72,6 +86,26 @@ public class SignupOne extends JFrame {
         marital.setFont(new Font("Arial",Font.BOLD,20));
         marital.setBounds(100,390,200,30);
         add(marital);
+
+        JRadioButton married = new JRadioButton("Married");
+        married.setBounds(300,390,80,30);
+        married.setBackground(Color.WHITE);
+        add(married);
+
+        JRadioButton unmarried = new JRadioButton("Unmarried");
+        unmarried.setBounds(420,390,90,30);
+        unmarried.setBackground(Color.WHITE);
+        add(unmarried);
+
+        JRadioButton other = new JRadioButton("Other");
+        other.setBounds(540,390,90,30);
+        other.setBackground(Color.WHITE);
+        add(other);
+
+        ButtonGroup maritalGroup = new ButtonGroup();
+        maritalGroup.add(married);
+        maritalGroup.add(unmarried);
+        maritalGroup.add(other);
 
         JLabel city =new JLabel("City:");
         city.setFont(new Font("Arial",Font.BOLD,20));
@@ -112,6 +146,10 @@ public class SignupOne extends JFrame {
         pinTextField.setFont(new Font("Arial",Font.BOLD,20));
         pinTextField.setBounds(300,590,400,30);
         add(pinTextField);
+
+
+
+
 
 
 
