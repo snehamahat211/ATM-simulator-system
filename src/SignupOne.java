@@ -1,14 +1,18 @@
+import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.Random;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.*;
 
-public class SignupOne extends JFrame {
+public class SignupOne extends JFrame implements ActionListener {
     long random;
     JTextField nameTextField,fTextField,emailTextField,cityTextField,addressTextField,pinTextField,stateTextField;
     JButton next;
     JRadioButton male,female,married,unmarried,other;
     JDateChooser datechooser;
+
 
     SignupOne() {
         setLayout(null);
@@ -143,10 +147,10 @@ public class SignupOne extends JFrame {
         stateTextField.setBounds(300,530,400,30);
         add(stateTextField);
 
-        JLabel pincode  =new JLabel("Pin Code:");
-        pincode.setFont(new Font("Arial",Font.BOLD,20));
-        pincode.setBounds(100,590,200,30);
-        add(pincode);
+        JLabel pin  =new JLabel("Pin Code:");
+        pin.setFont(new Font("Arial",Font.BOLD,20));
+        pin.setBounds(100,590,200,30);
+        add(pin);
 
         pinTextField =new JTextField();
         pinTextField.setFont(new Font("Arial",Font.BOLD,20));
@@ -159,35 +163,54 @@ public class SignupOne extends JFrame {
         next.setForeground(Color.WHITE);
         next.setFont(new Font("Arial",Font.BOLD,20));
         next.setBounds(620,660,80,20);
+        next.addActionListener(this);
         add(next);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         getContentPane().setBackground(Color.WHITE);
         setSize(850,800);
         setVisible(true);
     }
-    public static void main(String[] args) {
+    public void actionPerformed(ActionEvent ae){
+        String formno = "" + random;
+        String name=nameTextField.getText();
+        String fname=fTextField.getText();
+        String dob=((JTextField)datechooser.getDateEditor().getUiComponent()).getText();
+        String gender=null;
+        if (male.isSelected()){
+            gender="Male";
+        } else if(female.isSelected()){
+            gender ="female";
+        }
+        String email=emailTextField.getText();
+        String marital=null;
+        if (married.isSelected()){
+            marital="Married";
+        } else if(unmarried.isSelected()){
+            marital ="Unmarried";
+        }else if(other.isSelected()) {
+            marital = "Other";
+        }
+        String city=cityTextField.getText();
+        String address=addressTextField.getText();
+        String state=stateTextField.getText();
+        String pin=pinTextField.getText();
+
+        try{
+            if (name.equals("")){
+                JOptionPane.showMessageDialog(null, "Please enter your name");
+            }
+
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+
+
+
+
+        public static void main(String[] args) {
         new SignupOne();
     }
 }
