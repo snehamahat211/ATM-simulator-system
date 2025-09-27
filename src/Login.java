@@ -83,8 +83,6 @@ public class Login extends JFrame implements ActionListener {
             new SignupOne().setVisible(true);
 
         }
-
-
     }
 
     public static void main(String[] args) {
