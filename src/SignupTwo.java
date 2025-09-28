@@ -1,8 +1,6 @@
-import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.Random;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.*;
 
@@ -16,50 +14,52 @@ public class SignupTwo extends JFrame implements ActionListener {
 
     SignupTwo() {
         setLayout(null);
-        JLabel formno = new JLabel("APPLICATION FORM NO." + random);
-        formno.setFont(new Font("Arial", Font.BOLD, 38));
-        formno.setBounds(140, 20, 600, 40);
-        add(formno);
-
-        JLabel personDetails = new JLabel("Page 1:Personal Details");
-        personDetails.setFont(new Font("Arial", Font.BOLD, 25));
-        personDetails.setBounds(290, 80, 400, 30);
-        add(personDetails);
+        setTitle("NEW ACCOUNT APPLICATION:PAGE 2") ;
+        JLabel additionalDetails = new JLabel("page 2:Additional Details");
+        additionalDetails.setFont(new Font("Arial", Font.BOLD, 38));
+        additionalDetails.setBounds(140, 20, 600, 40);
+        add(additionalDetails);
 
 
-        JLabel name = new JLabel("Name:");
-        name.setFont(new Font("Arial", Font.BOLD, 20));
+
+        JLabel name = new JLabel("Religion:");
+        name.setFont(new Font("Arial", Font.BOLD, 18));
         name.setBounds(100, 140, 100, 30);   //y=height of particular case +y axis
         add(name);
 
-        nameTextField = new JTextField();
-        nameTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        nameTextField.setBounds(300, 140, 400, 30);
-        add(nameTextField);
+        String[] valReligion ={"Hindu","Muslim","Buddhist","Sikh","Jain","Christain","Kirat","Others"};
+        JComboBox religion= new JComboBox(valReligion);
+        religion.setBounds(300, 140, 400, 30);
+        religion.setBackground(Color.WHITE);
+        add(religion);
 
 
-        JLabel fname = new JLabel("Father's name:");
-        fname.setFont(new Font("Arial", Font.BOLD, 20));
-        fname.setBounds(100, 190, 200, 30);
-        add(fname);
+        JLabel bname = new JLabel("Bank's Branch:");
+        bname.setFont(new Font("Arial", Font.BOLD, 18));
+        bname.setBounds(100, 190, 200, 30);
+        add(bname);
 
-        fTextField = new JTextField();
-        fTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        fTextField.setBounds(300, 190, 400, 30);
-        add(fTextField);
+        String[] valbname ={"Kausaltar","Kalimati","Banepa","Koteshwor","Baneshwor","RNC","Others"};
+        JComboBox bnname= new JComboBox(valbname);
+        bnname.setBounds(300, 190, 400, 30);
+        bnname.setBackground(Color.WHITE);
+        add(bnname);
 
-        JLabel dob = new JLabel("Date of birth :");
-        dob.setFont(new Font("Arial", Font.BOLD, 20));
+
+        JLabel dob = new JLabel("AmountonBank :");
+        dob.setFont(new Font("Arial", Font.BOLD, 18));
         dob.setBounds(100, 240, 230, 30);
         add(dob);
 
-        datechooser = new JDateChooser();
-        datechooser.setBounds(300, 240, 400, 30);
-        add(datechooser);
+        String[] valincomec ={"NULL","<50000","<1,00000","<1,50,000","<2,00000","<3,00000","Others"};
+        JComboBox incomec= new JComboBox(valincomec);
+        incomec.setBounds(300, 240, 400, 30);
+        incomec.setBackground(Color.WHITE);
+        add(incomec);
 
 
-        JLabel gender = new JLabel("Gender:");
-        gender.setFont(new Font("Arial", Font.BOLD, 20));
+        JLabel gender = new JLabel("Qualification:");
+        gender.setFont(new Font("Arial", Font.BOLD, 18));
         gender.setBounds(100, 290, 200, 30);
         add(gender);
 
@@ -77,8 +77,8 @@ public class SignupTwo extends JFrame implements ActionListener {
         buttonGroup.add(male);
         buttonGroup.add(female);
 
-        JLabel email = new JLabel("Email:");
-        email.setFont(new Font("Arial", Font.BOLD, 20));
+        JLabel email = new JLabel("Occupation:");
+        email.setFont(new Font("Arial", Font.BOLD, 18));
         email.setBounds(100, 340, 200, 30);
         add(email);
 
@@ -87,10 +87,10 @@ public class SignupTwo extends JFrame implements ActionListener {
         emailTextField.setBounds(300, 340, 400, 30);
         add(emailTextField);
 
-        JLabel marital = new JLabel("Marital status:");
-        marital.setFont(new Font("Arial", Font.BOLD, 20));
-        marital.setBounds(100, 390, 200, 30);
-        add(marital);
+        JLabel citizen = new JLabel("Citizenship Number:");
+        citizen.setFont(new Font("Arial", Font.BOLD, 18));
+        citizen.setBounds(100, 390, 200, 30);
+        add(citizen);
 
         married = new JRadioButton("Married");
         married.setBounds(300, 390, 80, 30);
@@ -112,8 +112,8 @@ public class SignupTwo extends JFrame implements ActionListener {
         maritalGroup.add(unmarried);
         maritalGroup.add(other);
 
-        JLabel city = new JLabel("City:");
-        city.setFont(new Font("Arial", Font.BOLD, 20));
+        JLabel city = new JLabel("RastriyaParichaya no:");
+        city.setFont(new Font("Arial", Font.BOLD, 17));
         city.setBounds(100, 430, 200, 30);
         add(city);
 
@@ -122,8 +122,8 @@ public class SignupTwo extends JFrame implements ActionListener {
         cityTextField.setBounds(300, 430, 400, 30);
         add(cityTextField);
 
-        JLabel address = new JLabel("Address:");
-        address.setFont(new Font("Arial", Font.BOLD, 20));
+        JLabel address = new JLabel("Senior Citizen :");
+        address.setFont(new Font("Arial", Font.BOLD, 18));
         address.setBounds(100, 480, 200, 30);
         add(address);
 
@@ -132,8 +132,8 @@ public class SignupTwo extends JFrame implements ActionListener {
         addressTextField.setBounds(300, 480, 400, 30);
         add(addressTextField);
 
-        JLabel state = new JLabel("State:");
-        state.setFont(new Font("Arial", Font.BOLD, 20));
+        JLabel state = new JLabel("Existing Account:");
+        state.setFont(new Font("Arial", Font.BOLD, 18));
         state.setBounds(100, 530, 200, 30);
         add(state);
 
@@ -143,7 +143,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(stateTextField);
 
         JLabel pin = new JLabel("Pin Code:");
-        pin.setFont(new Font("Arial", Font.BOLD, 20));
+        pin.setFont(new Font("Arial", Font.BOLD, 18));
         pin.setBounds(100, 590, 200, 30);
         add(pin);
 
