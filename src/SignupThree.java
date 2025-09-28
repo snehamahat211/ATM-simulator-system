@@ -3,6 +3,7 @@ import java.awt.*;
 
 public class SignupThree extends JFrame {
     JRadioButton r1,r2,r3,r4;
+    JCheckBox c1,c2,c3,c4,c5,c6,c7;
     SignupThree() {
         setLayout(null);
 
@@ -47,6 +48,38 @@ public class SignupThree extends JFrame {
         bg.add(r2);
         bg.add(r3);
         bg.add(r4);
+
+
+        JLabel card=new JLabel("Card Number:");
+        card.setFont(new Font("Arial", Font.BOLD, 20));
+        card.setBounds(150,320,500,30);
+        add(card);
+
+        JLabel digit=new JLabel("(Your 16 Digit Card Number)");
+        digit.setFont(new Font("Arial", Font.BOLD, 13));
+        digit.setBounds(150,345,300,30);
+        add(digit);
+
+        JLabel cardno=new JLabel("XXXX-XXXX-XXXX-5114");
+        cardno.setFont(new Font("Arial", Font.BOLD, 23));
+        cardno.setBounds(410,320,400,40);
+        add(cardno);
+
+
+        JLabel pin=new JLabel("PIN:");
+        pin.setFont(new Font("Arial", Font.BOLD, 20));
+        pin.setBounds(150,420,500,30);
+        add(pin);
+
+        JLabel pass=new JLabel("(Your 4 Digit Password)");
+        pass.setFont(new Font("Arial", Font.BOLD, 13));
+        pass.setBounds(150,445,300,30);
+        add(pass);
+
+        JLabel pinno=new JLabel("XXXX");
+        pinno.setFont(new Font("Arial", Font.BOLD, 23));
+        pinno.setBounds(410,420,400,40);
+        add(pinno);
 
 
         getContentPane().setBackground(Color.WHITE);
