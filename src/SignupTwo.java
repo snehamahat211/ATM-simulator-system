@@ -179,9 +179,8 @@ public class SignupTwo extends JFrame implements ActionListener {
                     "VALUES ('" + sreligion + "', '" + bname + "', '" + amount + "', '" + qualification + "', '" + occupation + "', '" +
                     citizen + "', '" + rp + "', '" + scitizen + "', '" + eaccount + "')";
             c.s.executeUpdate(query);
-
-            JOptionPane.showMessageDialog(null, "Form submitted successfully!");
             setVisible(false);
+            new SignupThree().setVisible(true);
 
         } catch (Exception e) {
             e.printStackTrace();
