@@ -224,12 +224,13 @@ public class SignupOne extends JFrame implements ActionListener {
             } else {
                 // ✅ Insert into database
                 Conn c = new Conn();
-                String query = "INSERT INTO signup (formno, name, fname, dob, gender, email, marital, address, city, state, pin) " +
+                String query = "INSERT INTO signuptwo (formno, name, fname, dob, gender, email, marital, address, city, state, pin) " +
                         "VALUES ('" + formno + "', '" + name + "', '" + fname + "', '" + dob + "', '" + gender + "', '" +
                         email + "', '" + marital + "', '" + address + "', '" + city + "', '" + state + "', '" + pin + "')";
                 c.s.executeUpdate(query);
 
-                JOptionPane.showMessageDialog(null, "Form submitted successfully!");
+                setVisible(false);
+                new SignupTwo().setVisible(true);
             }
         } catch (Exception e) {
             e.printStackTrace();
