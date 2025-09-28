@@ -125,8 +125,22 @@ public class SignupThree extends JFrame {
 
         c7= new JCheckBox("I hereby declares that the above entered details are correct to the best of my knowledge.");
         c7.setBackground(Color.WHITE);
-        c7.setBounds(150, 690, 650, 30);
+        c7.setBounds(150, 710, 650, 30);
         add(c7);
+
+        submit=new JButton("Submit");
+        submit.setBackground(Color.BLACK);
+        submit.setForeground(Color.WHITE);
+        submit.setFont(new Font("Arial", Font.BOLD, 15));
+        submit.setBounds(490, 45, 90, 30);
+        add(submit);
+
+        cancel=new JButton("Cancel");
+        cancel.setBackground(Color.BLACK);
+        cancel.setForeground(Color.WHITE);
+        cancel.setFont(new Font("Arial", Font.BOLD, 15));
+        cancel.setBounds(600, 45, 85, 30);
+        add(cancel);
 
 
 
