@@ -1,15 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import com.toedter.calendar.JDateChooser;
 import java.awt.event.*;
 
 public class SignupTwo extends JFrame implements ActionListener {
     long random;
-    JTextField nameTextField, fTextField, emailTextField, cityTextField, addressTextField, pinTextField, stateTextField;
+    JTextField  cnTextField, rpTextField;
     JButton next;
-    JRadioButton male, female, married, unmarried, other;
-    JDateChooser datechooser;
+    JRadioButton syes,sno,eyes,eno;
+    JComboBox religion,bnname,oname,incomec,ename;
 
 
     SignupTwo() {
@@ -22,13 +21,13 @@ public class SignupTwo extends JFrame implements ActionListener {
 
 
 
-        JLabel name = new JLabel("Religion:");
-        name.setFont(new Font("Arial", Font.BOLD, 18));
-        name.setBounds(100, 140, 100, 30);   //y=height of particular case +y axis
-        add(name);
+        JLabel sreligion = new JLabel("Religion:");
+        sreligion.setFont(new Font("Arial", Font.BOLD, 18));
+        sreligion.setBounds(100, 140, 100, 30);   //y=height of particular case +y axis
+        add(sreligion);
 
         String[] valReligion ={"Hindu","Muslim","Buddhist","Sikh","Jain","Christain","Kirat","Others"};
-        JComboBox religion= new JComboBox(valReligion);
+        religion= new JComboBox(valReligion);
         religion.setBounds(300, 140, 400, 30);
         religion.setBackground(Color.WHITE);
         add(religion);
@@ -40,7 +39,7 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(bname);
 
         String[] valbname ={"Kausaltar","Kalimati","Banepa","Koteshwor","Baneshwor","RNC","Others"};
-        JComboBox bnname= new JComboBox(valbname);
+        bnname= new JComboBox(valbname);
         bnname.setBounds(300, 190, 400, 30);
         bnname.setBackground(Color.WHITE);
         add(bnname);
@@ -52,19 +51,19 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(amount);
 
         String[] valincomec ={"NULL","<50000","<1,00000","<1,50,000","<2,00000","<3,00000","Others"};
-        JComboBox incomec= new JComboBox(valincomec);
+        incomec= new JComboBox(valincomec);
         incomec.setBounds(300, 240, 400, 30);
         incomec.setBackground(Color.WHITE);
         add(incomec);
 
 
-        JLabel gender = new JLabel("Qualification:");
-        gender.setFont(new Font("Arial", Font.BOLD, 18));
-        gender.setBounds(100, 290, 200, 30);
-        add(gender);
+        JLabel qualification = new JLabel("Qualification:");
+        qualification.setFont(new Font("Arial", Font.BOLD, 18));
+        qualification.setBounds(100, 290, 200, 30);
+        add(qualification);
 
         String[] valename ={"Non Graduation","Graduation","Masters","PHD","Others"};
-        JComboBox ename= new JComboBox(valename);
+        ename= new JComboBox(valename);
         ename.setBounds(300, 290, 400, 30);
         ename.setBackground(Color.WHITE);
         add(ename);
@@ -75,59 +74,68 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(occupation);
 
         String[] valoccup ={"Officers","Businessman","Army","Police","Doctor","Engineers","Nurse","Others"};
-        JComboBox oname= new JComboBox(valoccup);
+        oname= new JComboBox(valoccup);
         oname.setBounds(300, 190, 400, 30);
         oname.setBackground(Color.WHITE);
         add(oname);
+
         JLabel citizen = new JLabel("Citizenship Number:");
         citizen.setFont(new Font("Arial", Font.BOLD, 18));
         citizen.setBounds(100, 390, 200, 30);
         add(citizen);
+
         cnTextField = new JTextField();
         cnTextField.setFont(new Font("Arial", Font.BOLD, 20));
         cnTextField.setBounds(300, 390, 400, 30);
         add(cnTextField);
 
-        JLabel city = new JLabel("RastriyaParichaya no:");
-        city.setFont(new Font("Arial", Font.BOLD, 17));
-        city.setBounds(100, 430, 200, 30);
-        add(city);
+        JLabel rp = new JLabel("RastriyaParichaya no:");
+        rp.setFont(new Font("Arial", Font.BOLD, 17));
+        rp.setBounds(100, 430, 200, 30);
+        add(rp);
 
         rpTextField = new JTextField();
         rpTextField.setFont(new Font("Arial", Font.BOLD, 20));
         rpTextField.setBounds(300, 430, 400, 30);
         add(rpTextField);
 
-        JLabel address = new JLabel("Senior Citizen :");
-        address.setFont(new Font("Arial", Font.BOLD, 18));
-        address.setBounds(100, 480, 200, 30);
-        add(address);
+        JLabel scitizen = new JLabel("Senior Citizen :");
+        scitizen.setFont(new Font("Arial", Font.BOLD, 18));
+        scitizen.setBounds(100, 480, 200, 30);
+        add(scitizen);
 
-        addressTextField = new JTextField();
-        addressTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        addressTextField.setBounds(300, 480, 400, 30);
-        add(addressTextField);
+        syes = new JRadioButton("Yes");
+        syes.setBounds(300, 290, 60, 30);
+        syes.setBackground(Color.WHITE);
+        add(syes);
+
+        sno = new JRadioButton("No");
+        sno.setBounds(460, 290, 80, 30);
+        sno.setBackground(Color.WHITE);
+        add(sno);
+
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(syes);
+        buttonGroup.add(sno);
 
         JLabel state = new JLabel("Existing Account:");
         state.setFont(new Font("Arial", Font.BOLD, 18));
         state.setBounds(100, 530, 200, 30);
         add(state);
 
-        stateTextField = new JTextField();
-        stateTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        stateTextField.setBounds(300, 530, 400, 30);
-        add(stateTextField);
+        eyes = new JRadioButton("Yes");
+        eyes.setBounds(300, 290, 60, 30);
+        eyes.setBackground(Color.WHITE);
+        add(eyes);
 
-        JLabel pin = new JLabel("Pin Code:");
-        pin.setFont(new Font("Arial", Font.BOLD, 18));
-        pin.setBounds(100, 590, 200, 30);
-        add(pin);
+        eno = new JRadioButton("No");
+        eno.setBounds(460, 290, 80, 30);
+        eno.setBackground(Color.WHITE);
+        add(eno);
 
-        pinTextField = new JTextField();
-        pinTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        pinTextField.setBounds(300, 590, 400, 30);
-        add(pinTextField);
-
+        ButtonGroup bGroup = new ButtonGroup();
+        bGroup.add(eyes);
+        bGroup.add(eno);
 
         next = new JButton("Next");
         next.setBackground(Color.BLACK);
@@ -143,60 +151,32 @@ public class SignupTwo extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        String formno = "" + random;
-        String name = nameTextField.getText();
-        String fname = fTextField.getText();
-        String dob = ((JTextField) datechooser.getDateEditor().getUiComponent()).getText();
+        String sreligion = (String) religion.getSelectedItem();
+        String bname =(String) bnname.getSelectedItem();
+        String amount = (String) incomec.getSelectedItem();
+        String qualification =(String) ename.getSelectedItem();
+        String occupation =(String) oname.getSelectedItem();
 
-        String gender = null;
-        if (male.isSelected()) {
-            gender = "Male";
-        } else if (female.isSelected()) {
-            gender = "Female";
+        String citizen = cnTextField.getText();
+        String rp = cnTextField.getText();
+
+
+
+        String scitizen = null;
+        if (syes.isSelected()) {
+            scitizen = "Yes";
+        } else if (sno.isSelected()) {
+            scitizen= "No";
         }
 
-        String email = emailTextField.getText();
-
-        String marital = null;
-        if (married.isSelected()) {
-            marital = "Married";
-        } else if (unmarried.isSelected()) {
-            marital = "Unmarried";
-        } else if (other.isSelected()) {
-            marital = "Other";
+        String rp = null;
+        if (syes.isSelected()) {
+            rp = "Yes";
+        } else if (sno.isSelected()) {
+            rp= "No";
         }
-
-        String city = cityTextField.getText();
-        String address = addressTextField.getText();
-        String state = stateTextField.getText();
-        String pin = pinTextField.getText();
-
-        try {
-            // ✅ Validation for empty fields
-            if (name.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your name");
-            } else if (fname.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your father's name");
-            } else if (dob.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please select your date of birth");
-            } else if (gender == null) {
-                JOptionPane.showMessageDialog(null, "Please select your gender");
-            } else if (email.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your email");
-            } else if (marital == null) {
-                JOptionPane.showMessageDialog(null, "Please select your marital status");
-            } else if (address.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your address");
-            } else if (city.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your city");
-            } else if (state.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your state");
-            } else if (pin.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter your pin code");
-            } else {
-                // ✅ Insert into database
                 Conn c = new Conn();
-                String query = "INSERT INTO signup (formno, name, fname, dob, gender, email, marital, address, city, state, pin) " +
+                String query = "INSERT INTO signup ( name, fname, dob, gender, email, marital, address, city, state, pin) " +
                         "VALUES ('" + formno + "', '" + name + "', '" + fname + "', '" + dob + "', '" + gender + "', '" +
                         email + "', '" + marital + "', '" + address + "', '" + city + "', '" + state + "', '" + pin + "')";
                 c.s.executeUpdate(query);
