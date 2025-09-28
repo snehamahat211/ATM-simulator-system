@@ -46,10 +46,10 @@ public class SignupTwo extends JFrame implements ActionListener {
         add(bnname);
 
 
-        JLabel dob = new JLabel("AmountonBank :");
-        dob.setFont(new Font("Arial", Font.BOLD, 18));
-        dob.setBounds(100, 240, 230, 30);
-        add(dob);
+        JLabel amount = new JLabel("AmountonBank :");
+        amount.setFont(new Font("Arial", Font.BOLD, 18));
+        amount.setBounds(100, 240, 230, 30);
+        add(amount);
 
         String[] valincomec ={"NULL","<50000","<1,00000","<1,50,000","<2,00000","<3,00000","Others"};
         JComboBox incomec= new JComboBox(valincomec);
@@ -63,64 +63,40 @@ public class SignupTwo extends JFrame implements ActionListener {
         gender.setBounds(100, 290, 200, 30);
         add(gender);
 
-        male = new JRadioButton("Male");
-        male.setBounds(300, 290, 60, 30);
-        male.setBackground(Color.WHITE);
-        add(male);
+        String[] valename ={"Non Graduation","Graduation","Masters","PHD","Others"};
+        JComboBox ename= new JComboBox(valename);
+        ename.setBounds(300, 290, 400, 30);
+        ename.setBackground(Color.WHITE);
+        add(ename);
 
-        female = new JRadioButton("Female");
-        female.setBounds(460, 290, 80, 30);
-        female.setBackground(Color.WHITE);
-        add(female);
+        JLabel occupation = new JLabel("Occupation:");
+        occupation.setFont(new Font("Arial", Font.BOLD, 18));
+        occupation.setBounds(100, 340, 200, 30);
+        add(occupation);
 
-        ButtonGroup buttonGroup = new ButtonGroup();
-        buttonGroup.add(male);
-        buttonGroup.add(female);
-
-        JLabel email = new JLabel("Occupation:");
-        email.setFont(new Font("Arial", Font.BOLD, 18));
-        email.setBounds(100, 340, 200, 30);
-        add(email);
-
-        emailTextField = new JTextField();
-        emailTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        emailTextField.setBounds(300, 340, 400, 30);
-        add(emailTextField);
-
+        String[] valoccup ={"Officers","Businessman","Army","Police","Doctor","Engineers","Nurse","Others"};
+        JComboBox oname= new JComboBox(valoccup);
+        oname.setBounds(300, 190, 400, 30);
+        oname.setBackground(Color.WHITE);
+        add(oname);
         JLabel citizen = new JLabel("Citizenship Number:");
         citizen.setFont(new Font("Arial", Font.BOLD, 18));
         citizen.setBounds(100, 390, 200, 30);
         add(citizen);
-
-        married = new JRadioButton("Married");
-        married.setBounds(300, 390, 80, 30);
-        married.setBackground(Color.WHITE);
-        add(married);
-
-        unmarried = new JRadioButton("Unmarried");
-        unmarried.setBounds(460, 390, 90, 30);
-        unmarried.setBackground(Color.WHITE);
-        add(unmarried);
-
-        other = new JRadioButton("Other");
-        other.setBounds(640, 390, 90, 30);
-        other.setBackground(Color.WHITE);
-        add(other);
-
-        ButtonGroup maritalGroup = new ButtonGroup();
-        maritalGroup.add(married);
-        maritalGroup.add(unmarried);
-        maritalGroup.add(other);
+        cnTextField = new JTextField();
+        cnTextField.setFont(new Font("Arial", Font.BOLD, 20));
+        cnTextField.setBounds(300, 390, 400, 30);
+        add(cnTextField);
 
         JLabel city = new JLabel("RastriyaParichaya no:");
         city.setFont(new Font("Arial", Font.BOLD, 17));
         city.setBounds(100, 430, 200, 30);
         add(city);
 
-        cityTextField = new JTextField();
-        cityTextField.setFont(new Font("Arial", Font.BOLD, 20));
-        cityTextField.setBounds(300, 430, 400, 30);
-        add(cityTextField);
+        rpTextField = new JTextField();
+        rpTextField.setFont(new Font("Arial", Font.BOLD, 20));
+        rpTextField.setBounds(300, 430, 400, 30);
+        add(rpTextField);
 
         JLabel address = new JLabel("Senior Citizen :");
         address.setFont(new Font("Arial", Font.BOLD, 18));
