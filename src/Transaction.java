@@ -1,9 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Transaction extends JFrame {
+
+public class Transaction extends JFrame implements ActionListener {
+    JButton deposit,withdrawl,fastcash,ministatement,pinchange,balance,exit;
     Transaction() {
         setLayout(null);
+
         ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("atm.jpg"));
         Image i2=i1.getImage().getScaledInstance(900,900,Image.SCALE_DEFAULT);
         ImageIcon i3=new ImageIcon(i2);
@@ -17,42 +21,58 @@ public class Transaction extends JFrame {
         text.setFont(new Font("System",Font.BOLD,16));
         image.add(text);
 
-        JButton deposit=new JButton("Deposit");
+        deposit=new JButton("Deposit");
         deposit.setBounds(170,415,150,30);
+        deposit.addActionListener(this);
         image.add(deposit);
 
-        JButton withdrawl=new JButton(" Cash withdrawl");
+        withdrawl=new JButton(" Cash withdrawl");
         withdrawl.setBounds(355,415,150,30);
+        withdrawl.addActionListener(this);
         image.add(withdrawl);
 
-        JButton fastcash=new JButton("Fastcash");
+        fastcash=new JButton("Fastcash");
         fastcash.setBounds(170,450,150,30);
+        fastcash.addActionListener(this);
         image.add(fastcash);
 
-        JButton ministatement=new JButton("Mini Statement");
+        ministatement=new JButton("Mini Statement");
         ministatement.setBounds(355,450,150,30);
+        ministatement.addActionListener(this);
         image.add(ministatement);
 
-        JButton pinchange=new JButton("Pin Change");
+        pinchange=new JButton("Pin Change");
         pinchange.setBounds(170,485,150,30);
+        pinchange.addActionListener(this);
         image.add(pinchange);
 
-        JButton balance=new JButton("Balance check");
+        balance=new JButton("Balance check");
         balance.setBounds(355,485,150,30);
+        balance.addActionListener(this);
         image.add(balance);
 
-        JButton exit=new JButton("Exit");
+        exit=new JButton("Exit");
         exit.setBounds(170,520,150,30);
+        exit.addActionListener(this);
         image.add(exit);
 
 
         add(image);
         setSize(900,900);
         setLocation(300,0);
+        setUndecorated(true);
         setVisible(true);
 
 
     }
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource()==exit){
+            System.exit(0);
+        }
+
+    }
+
     public static void main(String args[]){
         new Transaction();
 
