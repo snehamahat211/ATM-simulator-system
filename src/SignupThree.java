@@ -198,8 +198,14 @@ public class SignupThree extends JFrame implements ActionListener {
                     Conn conn=new Conn();
                     String query1 = "INSERT INTO signupthree (accountType, cardnumber, pin, facility) "
                             + "VALUES ('" + accountType + "', '" + cardnumber + "', '" + pinnumber + "', '" + facility + "')";
+                    String query2 = "INSERT INTO login ( cardnumber, pin) "
+                            + "VALUES ('" + cardnumber + "', '" + pinnumber + "')";
+
 
                     conn.s.executeUpdate(query1);
+                    conn.s.executeUpdate(query2);
+                    JOptionPane.showMessageDialog(null,"Card Number" + cardnumber+"\n Pin:"+pinnumber);
+
 
 
                 }
