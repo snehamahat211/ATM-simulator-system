@@ -11,6 +11,18 @@ public class Transaction extends JFrame {
         image.setBounds(0,0,900,900);
         add(image);
 
+        JLabel text=new JLabel("Please select your Transaction");
+        text.setBounds(215,300,700,35);
+        text.setForeground(Color.white);
+        text.setFont(new Font("System",Font.BOLD,16));
+        image.add(text);
+
+        JButton deposit=new JButton("Deposit");
+        deposit.setBounds(170,415,150,30);
+        image.add(deposit);
+        JButton withdraw=new JButton("Withdraw");
+
+
         add(image);
         setSize(900,900);
         setLocation(300,0);
