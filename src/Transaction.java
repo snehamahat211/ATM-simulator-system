@@ -20,7 +20,30 @@ public class Transaction extends JFrame {
         JButton deposit=new JButton("Deposit");
         deposit.setBounds(170,415,150,30);
         image.add(deposit);
-        JButton withdraw=new JButton("Withdraw");
+
+        JButton withdrawl=new JButton(" Cash withdrawl");
+        withdrawl.setBounds(355,415,150,30);
+        image.add(withdrawl);
+
+        JButton fastcash=new JButton("Fastcash");
+        fastcash.setBounds(170,450,150,30);
+        image.add(fastcash);
+
+        JButton ministatement=new JButton("Mini Statement");
+        ministatement.setBounds(355,450,150,30);
+        image.add(ministatement);
+
+        JButton pinchange=new JButton("Pin Change");
+        pinchange.setBounds(170,485,150,30);
+        image.add(pinchange);
+
+        JButton balance=new JButton("Balance check");
+        balance.setBounds(355,485,150,30);
+        image.add(balance);
+
+        JButton exit=new JButton("Exit");
+        exit.setBounds(170,520,150,30);
+        image.add(exit);
 
 
         add(image);
