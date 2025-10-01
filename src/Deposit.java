@@ -4,6 +4,8 @@ import java.awt.event.*;
 
 
 public class Deposit extends JFrame {
+    JButton back,deposit;
+    JTextField amount;
     Deposit() {
         setLayout(null);
 
@@ -19,6 +21,22 @@ public class Deposit extends JFrame {
         text.setForeground(Color.white);
         text.setFont(new Font("System", Font.BOLD, 16));
         image.add(text);
+
+        amount=new JTextField();
+        amount.setFont(new Font("System", Font.BOLD, 22));
+        amount.setBounds(190, 350, 300, 22);
+        image.add(amount) ;
+
+        deposit = new JButton("Deposit");
+        deposit.setBounds(360,487,150, 25);
+        deposit.setFont(new Font("System", Font.BOLD, 16));
+        image.add(deposit);
+
+        back = new JButton("Back");
+        back.setBounds(360,520,150, 25);
+        back.setFont(new Font("System", Font.BOLD, 16));
+        image.add(back);
+
 
         add(image);
         setSize(900,900);
