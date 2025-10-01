@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 public class Deposit extends JFrame implements ActionListener {
@@ -55,6 +57,16 @@ public class Deposit extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==deposit){
+            String number = amount.getText();
+            Date date = new Date();
+            if (number.equals("")){
+                JOptionPane.showMessageDialog(null, "Please enter the amount you want to deposit");
+            } else {
+                Conn conn = new Conn();
+                String query = "INSERT INTO bank(pin, txn_date, txn_type, amount) VALUES('"
+                        + pin + "','" + date + "','Deposit','" + number + "')";
+
+            }
 
         }else if(e.getSource()==back){
             setVisible(false);
