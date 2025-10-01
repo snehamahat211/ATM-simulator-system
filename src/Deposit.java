@@ -1,12 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.ActionEvent;
 
 
-public class Deposit extends JFrame {
+public class Deposit extends JFrame implements ActionListener {
     JButton back,deposit;
     JTextField amount;
-    Deposit() {
+    String pin;
+    Deposit(String pin) {
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("atm.jpg"));
@@ -25,16 +27,19 @@ public class Deposit extends JFrame {
         amount=new JTextField();
         amount.setFont(new Font("System", Font.BOLD, 22));
         amount.setBounds(190, 350, 300, 22);
+        amount.addActionListener(this);
         image.add(amount) ;
 
         deposit = new JButton("Deposit");
         deposit.setBounds(360,487,150, 25);
         deposit.setFont(new Font("System", Font.BOLD, 16));
+        deposit.addActionListener(this);
         image.add(deposit);
 
         back = new JButton("Back");
         back.setBounds(360,520,150, 25);
         back.setFont(new Font("System", Font.BOLD, 16));
+        back.addActionListener(this);
         image.add(back);
 
 
@@ -47,10 +52,20 @@ public class Deposit extends JFrame {
 
 
     }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==deposit){
+
+        }else if(e.getSource()==back){
+            setVisible(false);
+            new Transaction(pin).setVisible(true);
+        }
+    }
+
 
 
     public static void main(String args[]) {
-        new Deposit();
+        new Deposit("");
 
     }
 }
