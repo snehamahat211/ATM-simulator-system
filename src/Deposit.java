@@ -1,15 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.util.*;
-
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Deposit extends JFrame implements ActionListener {
-    JButton back,deposit;
+    JButton back, deposit;
     JTextField amount;
     String pin;
+
     Deposit(String pin) {
+        this.pin = pin; // ✅ fix: assign pin
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("atm.jpg"));
@@ -19,72 +21,76 @@ public class Deposit extends JFrame implements ActionListener {
         image.setBounds(0, 0, 900, 900);
         add(image);
 
-        JLabel text = new JLabel("Enter the amount you want to deposit. ");
+        JLabel text = new JLabel("Enter the amount you want to deposit: ");
         text.setBounds(200, 300, 700, 35);
         text.setForeground(Color.white);
         text.setFont(new Font("System", Font.BOLD, 16));
         image.add(text);
 
-        amount=new JTextField();
+        amount = new JTextField();
         amount.setFont(new Font("System", Font.BOLD, 22));
-        amount.setBounds(190, 350, 300, 22);
-        amount.addActionListener(this);
-        image.add(amount) ;
+        amount.setBounds(190, 350, 300, 30);
+        image.add(amount);
 
         deposit = new JButton("Deposit");
-        deposit.setBounds(360,487,150, 25);
+        deposit.setBounds(360, 487, 150, 25);
         deposit.setFont(new Font("System", Font.BOLD, 16));
         deposit.addActionListener(this);
         image.add(deposit);
 
         back = new JButton("Back");
-        back.setBounds(360,520,150, 25);
+        back.setBounds(360, 520, 150, 25);
         back.setFont(new Font("System", Font.BOLD, 16));
         back.addActionListener(this);
         image.add(back);
 
-
-        add(image);
-        setSize(900,900);
-        setLocation(300,0);
+        setSize(900, 900);
+        setLocation(300, 0);
         setUndecorated(true);
         setVisible(true);
-
-
-
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==deposit){
-            String number = amount.getText();
+        if (e.getSource() == deposit) {
+            String number = amount.getText().trim();
             Date date = new Date();
-            if (number.equals("")){
+
+            if (number.equals("")) {
                 JOptionPane.showMessageDialog(null, "Please enter the amount you want to deposit");
             } else {
                 try {
                     Conn conn = new Conn();
-                    String query = "INSERT INTO bank(pin, date, type, amount) VALUES('"
-                            + pin + "','" + date + "','Deposit','" + number + "')";
-                    conn.s.executeUpdate(query);
-                    JOptionPane.showMessageDialog(null,"Rs" +number+ "Deposited successfully");
+
+                    // Format date as string
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    String formattedDate = sdf.format(date);
+
+                    String query = "INSERT INTO bank(pin, date, type, amount) VALUES(?, ?, ?, ?)";
+                    PreparedStatement ps = conn.c.prepareStatement(query);
+                    ps.setString(1, pin);
+                    ps.setString(2, formattedDate);
+                    ps.setString(3, "Deposit");
+                    ps.setInt(4, Integer.parseInt(number));
+
+                    ps.executeUpdate();
+
+                    JOptionPane.showMessageDialog(null, "Rs " + number + " Deposited successfully");
                     setVisible(false);
                     new Transaction(pin).setVisible(true);
-            }
-                catch (Exception ae){
-                    System.out.println(ae);
+
+                } catch (Exception ae) {
+                    ae.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error: " + ae.getMessage());
                 }
             }
-
-        }else if(e.getSource()==back){
+        } else if (e.getSource() == back) {
             setVisible(false);
             new Transaction(pin).setVisible(true);
         }
     }
 
-
-
     public static void main(String args[]) {
-        new Deposit("");
-
+        new Deposit("1234"); // ✅ pass some pin
     }
 }
