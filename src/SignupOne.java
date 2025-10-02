@@ -14,6 +14,7 @@ public class SignupOne extends JFrame implements ActionListener {
     JDateChooser datechooser;
 
 
+
     SignupOne() {
         setLayout(null);
 
@@ -222,15 +223,14 @@ public class SignupOne extends JFrame implements ActionListener {
             } else if (pin.equals("")) {
                 JOptionPane.showMessageDialog(null, "Please enter your pin code");
             } else {
-                // ✅ Insert into database
                 Conn c = new Conn();
-                String query = "INSERT INTO signuptwo (formno, name, fname, dob, gender, email, marital, address, city, state, pin) " +
+                String query = "INSERT INTO signup(formno, name, fname, dob, gender, email, marital, address, city, state, pin) " +
                         "VALUES ('" + formno + "', '" + name + "', '" + fname + "', '" + dob + "', '" + gender + "', '" +
                         email + "', '" + marital + "', '" + address + "', '" + city + "', '" + state + "', '" + pin + "')";
                 c.s.executeUpdate(query);
 
                 setVisible(false);
-                new SignupTwo().setVisible(true);
+                new SignupTwo(formno).setVisible(true);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -9,7 +9,7 @@ public class SignupThree extends JFrame implements ActionListener {
     JRadioButton r1,r2,r3,r4;
     JCheckBox c1,c2,c3,c4,c5,c6,c7;
     JButton submit,cancel;
-    SignupThree() {
+    SignupThree( String formno) {
         setLayout(null);
 
         JLabel ll=new JLabel("Page 3: Account Details");
@@ -198,6 +198,7 @@ public class SignupThree extends JFrame implements ActionListener {
                     Conn conn=new Conn();
                     String query1 = "INSERT INTO signupthree (accountType, cardnumber, pin, facility) "
                             + "VALUES ('" + accountType + "', '" + cardnumber + "', '" + pinnumber + "', '" + facility + "')";
+
                     String query2 = "INSERT INTO login ( cardnumber, pin) "
                             + "VALUES ('" + cardnumber + "', '" + pinnumber + "')";
 
@@ -221,6 +222,6 @@ public class SignupThree extends JFrame implements ActionListener {
         else if (ae.getSource()==cancel){setVisible(false);}
         }
     public static  void main(String []args){
-        new SignupThree();
+        new SignupThree("");
     }
 }

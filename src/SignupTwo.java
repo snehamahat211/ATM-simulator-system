@@ -8,8 +8,9 @@ public class SignupTwo extends JFrame implements ActionListener {
     JButton next;
     JRadioButton syes, sno, eyes, eno;
     JComboBox religion, bnname, oname, incomec, ename;
+    String formno;
 
-    SignupTwo() {
+    SignupTwo(String formno) {
         setLayout(null);
         setTitle("NEW ACCOUNT APPLICATION: PAGE 2");
 
@@ -175,12 +176,13 @@ public class SignupTwo extends JFrame implements ActionListener {
 
         try {
             Conn c = new Conn();
-            String query = "INSERT INTO signuptwo (religion, branch, amount, qualification, occupation, citizen_no, rp_no, senior_citizen, existing_account) " +
-                    "VALUES ('" + sreligion + "', '" + bname + "', '" + amount + "', '" + qualification + "', '" + occupation + "', '" +
+            String query = "INSERT INTO signuptwo (formno, religion, branch, amount, qualification, occupation, citizen_no, rp_no, senior_citizen, existing_account) " +
+                    "VALUES ('" + formno + "', '" + sreligion + "', '" + bname + "', '" + amount + "', '" + qualification + "', '" + occupation + "', '" +
                     citizen + "', '" + rp + "', '" + scitizen + "', '" + eaccount + "')";
+
             c.s.executeUpdate(query);
             setVisible(false);
-            new SignupThree().setVisible(true);
+            new SignupThree(formno).setVisible(true);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -188,7 +190,7 @@ public class SignupTwo extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new SignupTwo();
+        new SignupTwo("");
     }
 }
 
