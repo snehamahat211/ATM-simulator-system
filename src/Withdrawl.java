@@ -5,13 +5,13 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Deposit extends JFrame implements ActionListener {
-    JButton back, deposit;
+public class Withdrawl extends JFrame implements ActionListener {
+    JButton back, withdrawl;
     JTextField amount;
     String pin;
 
-    Deposit(String pin) {
-        this.pin = pin;
+    Withdrawl(String pin) {
+        this.pin = pin; // ✅ fix: assign pin
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("atm.jpg"));
@@ -32,11 +32,11 @@ public class Deposit extends JFrame implements ActionListener {
         amount.setBounds(190, 350, 300, 30);
         image.add(amount);
 
-        deposit = new JButton("Deposit");
-        deposit.setBounds(360, 487, 150, 25);
-        deposit.setFont(new Font("System", Font.BOLD, 16));
-        deposit.addActionListener(this);
-        image.add(deposit);
+        withdrawl = new JButton("Withdraw");
+        withdrawl.setBounds(360, 487, 150, 25);
+        withdrawl.setFont(new Font("System", Font.BOLD, 16));
+        withdrawl.addActionListener(this);
+        image.add(withdrawl);
 
         back = new JButton("Back");
         back.setBounds(360, 520, 150, 25);
@@ -52,12 +52,12 @@ public class Deposit extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == deposit) {
+        if (e.getSource() == withdrawl) {
             String number = amount.getText().trim();
             Date date = new Date();
 
             if (number.equals("")) {
-                JOptionPane.showMessageDialog(null, "Please enter the amount you want to deposit");
+                JOptionPane.showMessageDialog(null, "Please enter the amount you want to withdrawl");
             } else {
                 try {
                     Conn conn = new Conn();
@@ -70,12 +70,12 @@ public class Deposit extends JFrame implements ActionListener {
                     PreparedStatement ps = conn.c.prepareStatement(query);
                     ps.setString(1, pin);
                     ps.setString(2, formattedDate);
-                    ps.setString(3, "Deposit");
+                    ps.setString(3, "Withdrawl");
                     ps.setInt(4, Integer.parseInt(number));
 
                     ps.executeUpdate();
 
-                    JOptionPane.showMessageDialog(null, "Rs " + number + " Deposited successfully");
+                    JOptionPane.showMessageDialog(null, "Rs " + number + " Cash Withdrawl successfully");
                     setVisible(false);
                     new Transaction(pin).setVisible(true);
 
@@ -91,6 +91,6 @@ public class Deposit extends JFrame implements ActionListener {
     }
 
     public static void main(String args[]) {
-        new Deposit(" ");
+        new Withdrawl("");
     }
 }
