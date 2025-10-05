@@ -10,6 +10,7 @@ public class FastCash extends JFrame implements ActionListener {
     String pin;
     FastCash( String pin)
     {
+        this.pin=pin;
         setLayout(null);
 
         ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("atm.jpg"));
@@ -76,7 +77,8 @@ public class FastCash extends JFrame implements ActionListener {
             setVisible(false);
             new Transaction(pin).setVisible(true);
         } else {
-            String amount=((JButton)ae.getSource()).getText().substring(3);
+            String amount = ((JButton) ae.getSource()).getText().substring(3);
+
             Conn c=new Conn();
             try{
                 ResultSet rs= c.s.executeQuery("select * from bank where pin ='"+pin+"'");
@@ -113,7 +115,7 @@ public class FastCash extends JFrame implements ActionListener {
     }
 
     public static void main(String args[]){
-        new FastCash("");
+        new Transaction("");
 
     }
 
