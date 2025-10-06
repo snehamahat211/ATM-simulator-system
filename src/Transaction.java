@@ -8,6 +8,7 @@ public class Transaction extends JFrame implements ActionListener {
     String pin;
     Transaction( String pin)
     {
+        this.pin=pin;
         setLayout(null);
 
         ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("atm.jpg"));
