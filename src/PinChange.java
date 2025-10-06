@@ -1,9 +1,14 @@
 
 import javax.swing.*;
 import java.awt.*;
-public class PinChange extends JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class PinChange extends JFrame implements ActionListener {
     String pin;
     JTextField change,change2;
+    JButton button,button2;
 
     PinChange(String pin) {
         this.pin=pin;
@@ -44,19 +49,23 @@ public class PinChange extends JFrame {
         change2.setBounds(380, 380, 130, 26);
         image.add(change2);
 
-        JButton button = new JButton("Confirm");
+        button = new JButton("Confirm");
         button.setFont(new Font("System", Font.BOLD,12));
         button.setBounds(400,488,110,28);
         button.setForeground(Color.BLACK);
         button.setBackground(Color.white);
+        button.addActionListener(this);
         image.add(button);
 
-        JButton button2 = new JButton("Back");
+        button2 = new JButton("Back");
         button2.setFont(new Font("System", Font.BOLD,12));
         button2.setBounds(400,518,110,28);
         button2.setForeground(Color.BLACK);
         button2.setBackground(Color.white);
+        button2.addActionListener(this);
         image.add(button2);
+
+
 
 
 
@@ -69,6 +78,51 @@ public class PinChange extends JFrame {
         setLocation(300,0);
         setVisible(true);
 
+    }
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource()== button) {
+            try {
+                String npin = change.getText();
+                String rpin = change2.getText();
+
+                if (!npin.equals(rpin)) {
+                    JOptionPane.showMessageDialog(null, "Pin Number doesnot match");
+                    return;
+                }
+
+                if (npin.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Please Enter Pin Number");
+                    return;
+
+                }
+                if (rpin.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Please Re-enter Pin Number");
+                    return;
+                }
+                Conn conn = new Conn();
+                String query1 = "UPDATE bank SET pin = '" + rpin + "' WHERE pin = '" + pin + "'";
+                String query2 = "UPDATE login SET pin = '" + rpin + "' WHERE pin = '" + pin+ "'";
+                String query3 = "UPDATE signupthree SET pin = '" + rpin + "' WHERE pin = '" + pin + "'";
+
+                conn.s.executeUpdate(query1);
+                conn.s.executeUpdate(query2);
+                conn.s.executeUpdate(query3);
+
+                JOptionPane.showMessageDialog(null, "PIN changed successfully");
+
+
+
+
+
+
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else{
+            setVisible(false);
+            new Transaction(pin).setVisible(true);
+        }
     }
 
     public static void main(String[] args) {
