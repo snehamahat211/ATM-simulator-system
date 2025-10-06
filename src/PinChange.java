@@ -44,6 +44,22 @@ public class PinChange extends JFrame {
         change2.setBounds(380, 380, 130, 26);
         image.add(change2);
 
+        JButton button = new JButton("Confirm");
+        button.setFont(new Font("System", Font.BOLD,12));
+        button.setBounds(400,488,110,28);
+        button.setForeground(Color.BLACK);
+        button.setBackground(Color.white);
+        image.add(button);
+
+        JButton button2 = new JButton("Back");
+        button2.setFont(new Font("System", Font.BOLD,12));
+        button2.setBounds(400,518,110,28);
+        button2.setForeground(Color.BLACK);
+        button2.setBackground(Color.white);
+        image.add(button2);
+
+
+
 
 
 
