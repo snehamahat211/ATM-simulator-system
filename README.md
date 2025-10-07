@@ -26,8 +26,14 @@
 #### 5.Deposit Page
 ![Output](Deposit.png)
 
-#### 1.Fastcash Page
-![Output](fastcash.png)
+#### 6.Fastcash Page
+![Output](Fastcash.png)
+
+#### 7.Pinchange Page
+![Output](Pinchange.png)
+
+#### 8.Balancecheck Page
+![Output](Balancecheck.png)
 
 
 
