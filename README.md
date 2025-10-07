@@ -1,6 +1,6 @@
 ## Bank Management System:
 
-###  Concept used:
+#  Concept used:
 ### Java Swing
 ### Java Event Handling
 ### Constructor
