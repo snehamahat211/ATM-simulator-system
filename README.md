@@ -20,6 +20,9 @@
 ![Output](Signin2.png)
 ![Output](Signin3.png)
 
+#####  Randompin and cardno generation
+![Output](randompin.png)
+
 #### 4.Transaction Page
 ![Output](Transaction.png)
 
@@ -29,11 +32,21 @@
 #### 6.Fastcash Page
 ![Output](Fastcash.png)
 
-#### 7.Pinchange Page
-![Output](Pinchange.png)
+#### 1.withdrawl Page
+![Output](withdrawl.png)
 
-#### 8.Balancecheck Page
+#### 8.Pinchange Page
+![Output](pinchange.png)
+
+#### 9.Balancecheck Page
 ![Output](Balancecheck.png)
+
+## My SQL tables and queries
+
+
+
+
+
 
 
 
