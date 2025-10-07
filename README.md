@@ -36,7 +36,7 @@
 #### 6.Fastcash Page
 ![Output](Fastcash.png)
 
-#### 1.withdrawl Page
+#### 7.withdrawl Page
 ![Output](withdrawl.png)
 
 #### 8.Pinchange Page
