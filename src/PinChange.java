@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class PinChange extends JFrame implements ActionListener {
     String pin;
-    JTextField change,change2;
+    JPasswordField change,change2;
     JButton button,button2;
 
     PinChange(String pin) {
@@ -33,7 +33,7 @@ public class PinChange extends JFrame implements ActionListener {
         pintext.setFont(new Font("System",Font.BOLD,12));
         image.add(pintext);
 
-        change = new JTextField();
+        change = new JPasswordField();
         change.setFont(new Font("System", Font.BOLD, 22));
         change.setBounds(380, 340, 130, 26);
         image.add(change);
@@ -44,7 +44,7 @@ public class PinChange extends JFrame implements ActionListener {
         ptext.setFont(new Font("System",Font.BOLD,12));
         image.add(ptext);
 
-        change2 = new JTextField();
+        change2 = new JPasswordField();
         change2.setFont(new Font("System", Font.BOLD, 22));
         change2.setBounds(380, 380, 130, 26);
         image.add(change2);
@@ -64,14 +64,6 @@ public class PinChange extends JFrame implements ActionListener {
         button2.setBackground(Color.white);
         button2.addActionListener(this);
         image.add(button2);
-
-
-
-
-
-
-
-
 
 
         setSize(900,900);
@@ -109,6 +101,8 @@ public class PinChange extends JFrame implements ActionListener {
                 conn.s.executeUpdate(query3);
 
                 JOptionPane.showMessageDialog(null, "PIN changed successfully");
+                setVisible(false);
+                new Transaction(pin).setVisible(true);
 
 
 
