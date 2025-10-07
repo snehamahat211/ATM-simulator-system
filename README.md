@@ -1,12 +1,12 @@
-## Bank Management System:
+# Bank Management System:
 
 #  Concept used:
-### Java Swing
-### Java Event Handling
-### Constructor
-### Classes and Objects
-### My SQL
+#### Java Swing
+#### Java Event Handling
+#### Constructor
+#### Classes and Objects
+#### My SQL
 
-## Outputs
+# Outputs
 
 
