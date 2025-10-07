@@ -43,6 +43,26 @@
 
 ## My SQL tables and queries
 
+#### 1.Tables in SQL workbench
+![Output](Table.png)
+
+#### 2.signin table 
+![Output](signin.png)
+
+#### 3.signintwo table 
+![Output](signintwo.png)
+
+#### 4.siginthree table
+![Output](signinthree.png)
+
+#### 5. Logintable
+![Output](TableLogin.png)
+
+#### 6.Bank table
+![Output](Tablebank.png)
+
+
+
 
 
 
