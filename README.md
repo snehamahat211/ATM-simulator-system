@@ -9,15 +9,30 @@
 
 # UI 
 #### 1.Login Page
-![Output](.png)
+![Output](Login.png)
+
 
 #### 2. Messages through dialogue box
-![Output](.png)
+![Output](Login2.png)
 
 #### 3. signin (3 pages)
-![Output](.png)
-![Output](.png)
-![Output](.png)
+![Output](Signin.png)
+![Output](Signin2.png)
+![Output](Signin3.png)
+
+#### 4.Transaction Page
+![Output](Transaction.png)
+
+#### 5.Deposit Page
+![Output](Deposit.png)
+
+#### 1.Fastcash Page
+![Output](fastcash.png)
+
+
+
+
+
 
 
 
