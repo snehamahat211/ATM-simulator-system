@@ -7,6 +7,17 @@
 #### Classes and Objects
 #### My SQL
 
-# Outputs
+# UI 
+#### 1.Login Page
+![Output](.png)
+
+#### 2. Messages through dialogue box
+![Output](.png)
+
+#### 3. signin (3 pages)
+![Output](.png)
+![Output](.png)
+![Output](.png)
+
 
 
