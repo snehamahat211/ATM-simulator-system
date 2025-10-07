@@ -63,7 +63,7 @@ public class FastCash extends JFrame implements ActionListener {
         image.add(exit);
 
 
-        add(image);
+
         setSize(900,900);
         setLocation(300,0);
         setUndecorated(true);
