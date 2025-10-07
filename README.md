@@ -47,13 +47,13 @@
 ![Output](Table.png)
 
 #### 2.signin table 
-![Output](signin.png)
+![Output](signup.png)
 
 #### 3.signintwo table 
-![Output](signintwo.png)
+![Output](signuptwo.png)
 
 #### 4.siginthree table
-![Output](signinthree.png)
+![Output](signupthree.png)
 
 #### 5. Logintable
 ![Output](TableLogin.png)
